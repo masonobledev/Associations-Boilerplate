@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { UniqueConstraintError } = require('sequelize/lib/errors');
 
 router.post('/signup' , async (req, res) =>{
-    const {username, password} = req.body.user;
+    const {username, password} = req.body;
     try {
         await models.UsersModel.create({
             username: username,
